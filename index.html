@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff7900">
+  <meta name="description" content="Find local service providers across Kenya with FIND-ME.">
+  <title>FIND-ME | Find Services Near You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#home">
+    <span class="brand-mark">F</span>
+    <span>FIND<span class="brand-dash">-</span>ME</span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="#home">Home</a>
+    <a href="#categories">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a class="header-register" href="#register">Register Business</a>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">YOUR LOCAL SERVICES DIRECTORY</span>
+      <h1>Find Trusted Services <span>Near You</span></h1>
+      <p>Discover local professionals and connect with the right people across Kenya.</p>
+
+      <div class="search-panel" role="search">
+        <label class="sr-only" for="serviceSearch">Search services</label>
+        <input id="serviceSearch" type="search"
+          placeholder="What service do you need?">
+
+        <label class="sr-only" for="categoryFilter">Service category</label>
+        <select id="categoryFilter">
+          <option value="">All service categories</option>
+          <option>Mechanics</option>
+          <option>Plumbers</option>
+          <option>Electricians</option>
+          <option>Appliance Repair</option>
+          <option>Cleaning Services</option>
+          <option>Phone Repair</option>
+          <option>Bodaboda Services</option>
+          <option>Taxi Services</option>
+          <option>Welders</option>
+          <option>Mama Fua</option>
+          <option>Tutors</option>
+          <option>Delivery Services</option>
+          <option>Restaurants</option>
+          <option>Hospitals and Clinics</option>
+          <option>Shops</option>
+          <option>Carpenters</option>
+          <option>Painters</option>
+          <option>Beauty and Salon Services</option>
+          <option>Laundry Services</option>
+          <option>Construction Services</option>
+        </select>
+
+        <button class="btn btn-primary search-button"
+          id="findServicesButton" type="button">
+          Find Services
+        </button>
+      </div>
+
+      <div class="location-prompt">
+        <button type="button" id="getBusinessLocation"
+          class="location-button">
+          📍 Use My Current Location
+        </button>
+        <p id="locationStatus" role="status" aria-live="polite">
+          Tap to find services near you.
+        </p>
+        <input type="hidden" id="businessLocation"
+          name="businessLocation">
+      </div>
+    </div>
+
+    <div class="hero-decoration" aria-hidden="true">
+      <div class="decoration-circle circle-one">🔧</div>
+      <div class="decoration-circle circle-two">🏠</div>
+      <div class="decoration-circle circle-three">🚕</div>
+      <div class="decoration-center">
+        <span>F</span>
+        <small>FIND IT<br>NEAR YOU</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section categories-section" id="categories">
+    <div class="section-heading">
+      <span class="eyebrow">EXPLORE LOCAL HELP</span>
+      <h2>Browse Service Categories</h2>
+      <p>Choose a service to get started.</p>
+    </div>
+
+    <div class="category-grid" id="categoryGrid">
+      <button class="category-card" data-category="Mechanics" type="button"><span class="category-icon">🔧</span><span>Mechanics</span></button>
+      <button class="category-card" data-category="Plumbers" type="button"><span class="category-icon">🚰</span><span>Plumbers</span></button>
+      <button class="category-card" data-category="Electricians" type="button"><span class="category-icon">💡</span><span>Electricians</span></button>
+      <button class="category-card" data-category="Appliance Repair" type="button"><span class="category-icon">🧰</span><span>Appliance Repair</span></button>
+      <button class="category-card" data-category="Cleaning Services" type="button"><span class="category-icon">🧹</span><span>Cleaning Services</span></button>
+      <button class="category-card" data-category="Phone Repair" type="button"><span class="category-icon">📱</span><span>Phone Repair</span></button>
+      <button class="category-card" data-category="Bodaboda Services" type="button"><span class="category-icon">🏍️</span><span>Bodaboda Services</span></button>
+      <button class="category-card" data-category="Taxi Services" type="button"><span class="category-icon">🚕</span><span>Taxi Services</span></button>
+      <button class="category-card" data-category="Welders" type="button"><span class="category-icon">🧑‍🏭</span><span>Welders</span></button>
+      <button class="category-card" data-category="Mama Fua" type="button"><span class="category-icon">🧺</span><span>Mama Fua</span></button>
+      <button class="category-card" data-category="Tutors" type="button"><span class="category-icon">📚</span><span>Tutors</span></button>
+      <button class="category-card" data-category="Delivery Services" type="button"><span class="category-icon">📦</span><span>Delivery Services</span></button>
+      <button class="category-card" data-category="Restaurants" type="button"><span class="category-icon">🍽️</span><span>Restaurants</span></button>
+      <button class="category-card" data-category="Hospitals and Clinics" type="button"><span class="category-icon">🏥</span><span>Hospitals &amp; Clinics</span></button>
+      <button class="category-card" data-category="Shops" type="button"><span class="category-icon">🛍️</span><span>Shops</span></button>
+      <button class="category-card" data-category="Carpenters" type="button"><span class="category-icon">🪚</span><span>Carpenters</span></button>
+      <button class="category-card" data-category="Painters" type="button"><span class="category-icon">🖌️</span><span>Painters</span></button>
+      <button class="category-card" data-category="Beauty and Salon Services" type="button"><span class="category-icon">💇</span><span>Beauty &amp; Salons</span></button>
+      <button class="category-card" data-category="Laundry Services" type="button"><span class="category-icon">👕</span><span>Laundry Services</span></button>
+      <button class="category-card" data-category="Construction Services" type="button"><span class="category-icon">🏗️</span><span>Construction</span></button>
+    </div>
+  </section>
+
+  <section class="section results-section" id="results">
+    <div class="section-heading">
+      <span class="eyebrow">LOCAL DIRECTORY</span>
+      <h2>Service Providers</h2>
+      <p id="resultsSummary">Choose a category or search for a service.</p>
+    </div>
+
+    <div class="results-grid" id="providerResults">
+      <div class="empty-state">
+        <span class="empty-icon">🔎</span>
+        <h3>Find the service you need</h3>
+        <p>Search above to discover available service providers.</p>
+      </div>
+    </div>
+
+    <p class="demo-note">
+      Provider listings appear when real business data is available.
+    </p>
+  </section>
+
+  <section class="register-section" id="register">
+    <div class="register-banner">
+      <div>
+        <span class="eyebrow">GROW YOUR BUSINESS</span>
+        <h2>Are you a service provider?</h2>
+        <p>Help customers discover your services on FIND-ME.</p>
+      </div>
+      <button class="btn btn-light" type="button"
+        id="openRegistration">
+        ＋ Tap Here to Register Your Business
+      </button>
+    </div>
+
+    <div class="registration-panel" id="registrationPanel" hidden>
+      <div class="form-heading">
+        <h3>Register Your Business</h3>
+        <p>Enter your business details below.</p>
+      </div>
+
+      <form id="providerForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="businessName">Business or Provider Name *</label>
+            <input id="businessName" name="businessName"
+              type="text" required placeholder="Enter business name">
+          </div>
+
+          <div class="form-field">
+            <label for="businessCategory">Service Category *</label>
+            <select id="businessCategory" name="businessCategory" required>
+              <option value="">Choose a category</option>
+              <option>Mechanics</option>
+              <option>Plumbers</option>
+              <option>Electricians</option>
+              <option>Appliance Repair</option>
+              <option>Cleaning Services</option>
+              <option>Phone Repair</option>
+              <option>Bodaboda Services</option>
+              <option>Taxi Services</option>
+              <option>Welders</option>
+              <option>Mama Fua</option>
+              <option>Tutors</option>
+              <option>Delivery Services</option>
+              <option>Restaurants</option>
+              <option>Hospitals and Clinics</option>
+              <option>Shops</option>
+              <option>Carpenters</option>
+              <option>Painters</option>
+              <option>Beauty and Salon Services</option>
+              <option>Laundry Services</option>
+              <option>Construction Services</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="businessDescription">Description (optional)</label>
+            <textarea id="businessDescription"
+              name="businessDescription" rows="3"
+              placeholder="Describe the services you offer"></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="businessPhone">Phone Number *</label>
+            <input id="businessPhone" name="businessPhone"
+              type="tel" required placeholder="e.g. 0712345678">
+          </div>
+
+          <div class="form-field">
+            <label for="businessEmail">Email (optional)</label>
+            <input id="businessEmail" name="businessEmail"
+              type="email" placeholder="you@example.com">
+          </div>
+
+          <div class="form-field full-width">
+            <label>Business Location</label>
+            <button type="button" id="getProviderLocation"
+              class="btn btn-outline">
+              📍 Use My Current Location
+            </button>
+            <p id="providerLocationStatus" class="field-help" role="status">
+              Location is optional.
+            </p>
+            <input type="hidden" id="providerCoordinates"
+              name="providerCoordinates">
+
+            <label for="providerArea">Town or area (optional)</label>
+            <input id="providerArea" name="providerArea"
+              type="text" placeholder="e.g. Nairobi, Westlands">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">
+            Register Business
+          </button>
+          <button class="btn btn-secondary" type="button"
+            id="closeRegistration">Cancel</button>
+        </div>
+
+        <p id="registrationMessage" class="form-message"
+          role="status" aria-live="polite"></p>
+
+        <p class="form-disclaimer">
+          Registration is currently a demo. A database or registration
+          service must be connected to save listings permanently.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section how-section" id="how-it-works">
+    <div class="section-heading">
+      <span class="eyebrow">SIMPLE AND CONVENIENT</span>
+      <h2>How FIND-ME Works</h2>
+      <p>Three simple steps to connect with local services.</p>
+    </div>
+
+    <div class="steps-grid">
+      <article class="step-card">
+        <span class="step-icon">🔍</span>
+        <h3>Choose a Service</h3>
+        <p>Search for the service you need or browse categories.</p>
+      </article>
+      <article class="step-card">
+        <span class="step-icon">📍</span>
+        <h3>Choose Your Area</h3>
+        <p>Share your location if you wish, or select your area.</p>
+      </article>
+      <article class="step-card">
+        <span class="step-icon">🤝</span>
+        <h3>Connect Directly</h3>
+        <p>View available provider details and contact them directly.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about-strip">
+    <div>
+      <span class="eyebrow">ABOUT FIND-ME</span>
+      <h2>Connecting people with local services</h2>
+    </div>
+    <p>
+      FIND-ME aims to help customers discover service providers
+      across Kenyan towns and cities.
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a class="brand footer-logo" href="#home">
+        <span class="brand-mark">F</span>
+        <span>FIND<span class="brand-dash">-</span>ME</span>
+      </a>
+      <p>Find local services. Connect with people. Make everyday tasks easier.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <a href="#categories">Service Categories</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#register">Register a Business</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Contact &amp; Feedback</h3>
+      <a href="mailto:findme.feedback33@gmail.com">
+        findme.feedback33@gmail.com
+      </a>
+      <a href="#privacy">Privacy Notice</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom" id="privacy">
+    <p>© <span id="currentYear">2026</span> FIND-ME. All rights reserved.</p>
+    <p>Share your location only when you choose to.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+        
